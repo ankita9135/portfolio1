@@ -297,7 +297,7 @@ section {
     color: var(--pink-600);
     border-bottom: 2px solid var(--pink-300);
     padding-bottom: 0.5rem;
-    opacity: 0;
+    opacity: 1;
 }
 
 .emoji {
