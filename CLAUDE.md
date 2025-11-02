@@ -4,107 +4,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tailwind CSS. It uses the shadcn/ui component library for UI components and follows a modern Next.js App Router architecture.
+This is a static HTML portfolio website using vanilla HTML, CSS, and JavaScript. It's designed to be hosted on GitHub Pages with no build process required.
 
-## Development Commands
+## File Structure
 
-```bash
-# Install dependencies (using pnpm)
-pnpm install
-
-# Run development server
-pnpm dev
-# Default port: http://localhost:3000
-
-# Build for production
-pnpm build
-
-# Run production build
-pnpm start
-
-# Lint code
-pnpm lint
+```
+portfolio1/
+├── index.html       # Main portfolio page
+├── styles.css       # All styling
+├── script.js        # JavaScript for interactivity
+├── .gitignore       # Git ignore rules
+└── CLAUDE.md        # This file
 ```
 
-## Architecture & Structure
+## Development
 
-### Next.js Configuration
-- **Build Configuration**: TypeScript and ESLint errors are ignored during builds (`next.config.mjs`)
-- **Image Optimization**: Disabled (unoptimized: true)
-- **App Router**: Uses Next.js 15 App Router pattern
+**No installation or build process needed!**
 
-### Project Structure
-```
-app/
-  layout.tsx          # Root layout with metadata
-  page.tsx            # Home page with all portfolio sections
-  globals.css         # Tailwind base styles + CSS variables for theming
+Simply open `index.html` in a browser:
+- Double-click the file, or
+- Right-click → Open with → Browser
 
-components/
-  [section].tsx       # Section components (hero, projects, skills, etc.)
-  ui/                 # shadcn/ui components (50+ components)
+To see changes:
+1. Edit the files
+2. Save
+3. Refresh your browser
 
-lib/
-  utils.ts           # cn() utility for className merging
+## Deployment to GitHub Pages
 
-hooks/
-  use-mobile.tsx     # Mobile detection hook
-  use-toast.ts       # Toast notification hook
-```
+This site is ready for GitHub Pages:
 
-### Key Architectural Patterns
+1. Push code to GitHub
+2. Go to repository Settings → Pages
+3. Select branch: `main`, folder: `/ (root)`
+4. Your site will be live at: `https://ankita9135.github.io/portfolio1/`
 
-1. **Component Organization**
-   - Page sections are in `/components` root
-   - Reusable UI primitives are in `/components/ui`
-   - Each section is a standalone component imported into `app/page.tsx`
+## Portfolio Structure
 
-2. **Styling System**
-   - CSS variables defined in `app/globals.css` for theming
-   - Dark mode support via `.dark` class
-   - Custom Tailwind utilities for animations (fade-in, delays)
-   - Color palette uses HSL CSS variables (e.g., `hsl(var(--primary))`)
-   - Uses `cn()` utility from `lib/utils.ts` for conditional className merging
+The `index.html` contains these sections:
+1. **Hero** - Name, tagline, and CTA buttons
+2. **Projects** - Featured project cards with GitHub links
+3. **Case Studies** - Detailed project descriptions
+4. **Skills** - Technical skills organized by category
+5. **Education** - Academic background
+6. **Work & Certifications** - Professional experience and certifications
+7. **Contact** - Email, phone, location, and social links
 
-3. **Import Paths**
-   - Uses `@/*` alias for absolute imports (configured in `tsconfig.json` and `components.json`)
-   - Examples: `@/components/ui/button`, `@/lib/utils`, `@/hooks/use-toast`
+## Key Features
 
-4. **Client/Server Components**
-   - Components with interactivity use `"use client"` directive
-   - Example: `hero-section.tsx` uses client-side mouse tracking
+- **Smooth scrolling** - Anchor links smoothly scroll to sections
+- **Responsive design** - Mobile-friendly layout
+- **Font Awesome icons** - Loaded from CDN
+- **Interactive effects** - Hover states and animations
 
-5. **shadcn/ui Integration**
-   - Configuration in `components.json`
-   - Uses Radix UI primitives
-   - Icon library: lucide-react
-   - Base color: neutral
-   - CSS variables mode enabled
+## Styling System
 
-## Portfolio Page Structure
-
-The main page (`app/page.tsx`) renders these sections in order:
-1. HeroSection - Interactive header with mouse-follow effect
-2. Featured Projects
-3. Case Studies
-4. Skills
-5. Education
-6. Work Experience & Certifications
-7. Contact
-
-Each section has an ID for anchor navigation (e.g., `#projects`, `#skills`).
-
-## Styling Guidelines
-
-- Primary color scheme: Pink accent (`--primary: 336 80% 58%`)
-- Background gradients: `from-white to-pink-50` pattern
-- Animations: Custom fade-in animations with delays
-- Spacing: Uses consistent spacing scale (py-24, space-y-24)
-- Responsive: Mobile-first with md/lg breakpoints
+- Uses CSS custom properties (variables) for consistent theming
+- Pink accent color scheme (`#e91e8c`)
+- Responsive breakpoints handled with media queries
+- Animations for fade-in effects and hover states
 
 ## Important Notes
 
-- The project was initially generated with v0.dev
-- TypeScript strict mode is enabled
-- React 19 and Next.js 15 are used (latest versions)
-- pnpm is the package manager (check `pnpm-lock.yaml`)
+- All styles are in `styles.css` - no external CSS frameworks
+- All JavaScript is in `script.js` - no dependencies
+- Font Awesome loaded from CDN (no local icon files needed)
+- Resume link in hero section points to `resume.pdf` (add this file if needed)
