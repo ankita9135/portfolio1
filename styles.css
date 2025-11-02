@@ -246,6 +246,17 @@ section {
     }
 }
 
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -288,6 +299,12 @@ section {
 
 .section-heading.animate-slideUp {
     animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Hero Section Fade Animation with Blur */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeInBlur 1s ease-out forwards;
 }
 
 /* Animation Delays */
